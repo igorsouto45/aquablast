@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AQUABLAST® Design System - Modern Industrial Technology Theme
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* AQUABLAST® Blue - Primary Brand Color */
+    --primary: 218 91% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 218 91% 62%;
+    --primary-dark: 218 91% 42%;
+
+    /* AQUABLAST® Red - Secondary Brand Color */
+    --secondary: 8 89% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 15% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* AQUABLAST® Cyan - Accent Color */
+    --accent: 184 78% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 15% 88%;
+    --input: 215 15% 88%;
+    --ring: 210 100% 45%;
+
+    /* Industrial Dark Gray */
+    --industrial: 215 25% 15%;
+    --industrial-foreground: 0 0% 100%;
+
+    /* AQUABLAST® Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218, 95%, 26%), hsl(232, 90%, 49%));
+    --gradient-hero: linear-gradient(135deg,  hsl(218, 95%, 26%) 0%, hsl(218, 95%, 26%) 50%, hsl(8, 89%, 56%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(8, 89%, 56%),  hsl(218, 95%, 26%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(184, 78%, 95%) 100%);
+
+    /* Vibrant Shadows */
+    --shadow-tech: 0 10px 40px -10px hsl(218, 91%, 52% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(215, 25%, 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(184, 78%, 55% / 0.5);
+    --shadow-red: 0 10px 30px -10px hsl(8, 89%, 56% / 0.3);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 218 91% 62%;
+    --primary-foreground: 215 25% 8%;
+    --primary-light: 218 91% 72%;
+    --primary-dark: 218 91% 52%;
+
+    --secondary: 8 89% 66%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 184 78% 65%;
+    --accent-foreground: 215 25% 8%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 210 100% 55%;
+
+    --industrial: 0 0% 95%;
+    --industrial-foreground: 215 25% 8%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(218 91% 62%), hsl(184 78% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 91% 62%) 0%, hsl(184 78% 65%) 50%, hsl(8 89% 66%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(8 89% 66%), hsl(218 91% 62%));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 25% 8%) 0%, hsl(215 25% 12%) 100%);
+
+    --shadow-tech: 0 10px 40px -10px hsl(218 91% 62% / 0.5);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(184 78% 65% / 0.6);
+    --shadow-red: 0 10px 30px -10px hsl(8 89% 66% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-orbitron;
+  }
+
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s infinite;
+}
+
+@layer components {
+
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .tech-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .tech-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .tech-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-tech);
+  }
+
+  .red-hover:hover {
+    box-shadow: var(--shadow-red);
+  }
+
+  .glow-hover:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* WhatsApp Button Pulse */
+  .whatsapp-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  /* Colorful accent elements */
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .brand-gradient {
+    background: var(--gradient-primary);
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
